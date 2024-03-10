@@ -1,45 +1,28 @@
-import React from 'react'
-import { BsFacebook, BsInstagram, BsTwitterX, BsLinkedin } from "react-icons/bs";
+"use client"
+
+import React, { useState } from "react";
 
 const HeaderTop = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleClose = () => {
+    setIsVisible(false);
+  };
+
   return (
-    <div className="border-b border-gray-200 hidden sm:block">
-        <div className="container py-4">
-            <div className="flex justify-between items-center">
-                <div className="hidden lg:flex gap-1">
-                    <div className="header_top__icon_wrapper">
-                        <BsFacebook />
-                    </div>
-                    <div className="header_top__icon_wrapper">
-                        <BsInstagram />
-                    </div>
-                    <div className="header_top__icon_wrapper">
-                        <BsTwitterX />
-                    </div>
-                    <div className="header_top__icon_wrapper">
-                        <BsLinkedin />
-                    </div>
-                </div>
-
-                <div className="text-gray-500 text-[12px]">
-                    <b>FREE SHIPPING</b> THIS WEEK ORDER - $55
-                </div>
-
-                <div className="flex gap-4">
-                    <select className="text-gray-500 text-[12px] w-[70px]" name="currency" id="currency">
-                        <option value="USD $">USD $</option>
-                        <option value="EUR €">EUR €</option>
-                        <option value="INR">INR</option>
-                    </select>
-                    <select className="text-gray-500 text-[12px] w-[80px]" name="language" id="language">
-                        <option value="English">English</option>
-                        <option value="French">French</option>
-                    </select>
-                </div>
-            </div>
+    <>
+      {isVisible && (
+        <div className="border-b border-gray-200 py-1.5 bg-rose-600 hidden sm:flex justify-center items-center relative">
+          <div className="text-white text-sm mx-auto">
+            30% discount on all products special for May!
+          </div>
+          <div className="text-white text-sm cursor-pointer absolute right-6" onClick={handleClose}>
+            X
+          </div>
         </div>
-    </div>
-  )
-}
+      )}
+    </>
+  );
+};
 
-export default HeaderTop
+export default HeaderTop;

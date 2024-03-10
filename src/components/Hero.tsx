@@ -10,16 +10,17 @@ const Hero = () => {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autplay: true,
+    autoplay: true,
     pauseOnHover: false,
+    arrows: false,
   };
 
   const slideData = [
     {
       id: 0,
-      img: "/banner-1.jpg",
+      img: "/Stadia.avif",
       title: "Trending Item",
-      mainTitle: "WOMEN'S LATEST FASHION SALE",
+      mainTitle: "GOOGLE STADIA",
       price: "$20",
     },
     {
@@ -31,12 +32,10 @@ const Hero = () => {
     },
     {
       id: 2,
-      img: "/banner-3.jpg",
-      title: "Sale Offer",
-      mainTitle: "NEW FASHION SUMMER SALE",
-      price: "$30",
+      img: "/Samsung.jpeg",
     },
   ];
+
   return (
     <div>
       <div className="container pt-6 lg:pt-0">
@@ -47,7 +46,7 @@ const Hero = () => {
               img={item.img}
               title={item.title}
               mainTitle={item.mainTitle}
-              price={item.price} 
+              price={item.price}
             />
           ))}
         </Slider>
