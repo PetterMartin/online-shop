@@ -1,28 +1,7 @@
-import React from 'react'
+import React from "react";
 import ProductCard from "./ProductCard";
 
 const productsData = [
-  {
-    img: "/jacket-1.jpg",
-    title: "Jacket",
-    desc: "MEN Yarn Fleece Full-Zip Jacket",
-    rating: 4,
-    price: "45.00",
-  },
-  {
-    img: "/skirt-1.jpg",
-    title: "Skirt",
-    desc: "Black Floral Wrap Midi Skirt",
-    rating: 5,
-    price: "55.00",
-  },
-  {
-    img: "/party-wear-1.jpg",
-    title: "Party Wear",
-    desc: "Women's Party Wear Shoes",
-    rating: 3,
-    price: "25.00",
-  },
   {
     img: "/shirt-1.jpg",
     title: "Shirt",
@@ -56,8 +35,32 @@ const productsData = [
 const NewProducts = () => {
   return (
     <div>
-      <div className="container pt-16">
-        <h2 className="font-medium text-2xl pb-4">New Products</h2>
+      <div className="container flex flex-col gap-4 pt-16">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <div className="w-3 h-6 bg-rose-500 rounded"></div>
+            <h2 className="font-medium text-2xl">Special Discount</h2>
+            <p className="font-medium text-gray-500">Ends in</p>
+            <div className="text-md font-light">
+              <span className="flex font-bold text-md text-rose-500 gap-2 items-center">
+                <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
+                  03
+                </div>
+                :
+                <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
+                  15
+                </div>
+                :
+                <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
+                  25
+                </div>
+              </span>
+            </div>
+          </div>
+          <div className="me-4 mb-1 hover:underline cursor-pointer">
+            See All
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 place-items-center sm:place-items-start sm:grid-cols-2 lg:grid-col-3 xl:grid-cols-4 gap-10 xl:gap-x-20 xl:gap-y-10">
           {productsData.map((item, index) => (
