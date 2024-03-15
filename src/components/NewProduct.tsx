@@ -43,15 +43,15 @@ const NewProducts = () => {
             <p className="hidden md:block font-medium text-gray-500">Ends in</p>
           <div className="hidden md:flex text-md font-light">
             <span className="flex font-bold text-md text-rose-500 gap-2 items-center">
-              <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
+              <div className="flex justify-center w-10 p-2 bg-gradient-to-b from-rose-500 to-rose-600 rounded-md text-gray-100">
                 03
               </div>
               :
-              <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
+              <div className="flex justify-center w-10 p-2 bg-gradient-to-b from-rose-500 to-rose-600 rounded-md text-gray-100">
                 15
               </div>
               :
-              <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
+              <div className="flex justify-center w-10 p-2 bg-gradient-to-b from-rose-500 to-rose-600 rounded-md text-gray-100">
                 25
               </div>
             </span>

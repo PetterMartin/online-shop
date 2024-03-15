@@ -34,7 +34,7 @@ const Slide: React.FC<PropsType> = ({ img, title, mainTitle, price }) => {
           </h3>
         )}
 
-        <div className="bg-rose-500 text-white text-[14px] md:text-[16px] p-2 px-4 rounded-lg inline-block cursor-pointer hover:bg-blackish">
+        <div className="bg-gradient-to-b from-rose-500 to-rose-600 text-white text-[14px] md:text-[16px] p-2 px-4 rounded-lg inline-block cursor-pointer hover:bg-blackish">
           Shop Now
         </div>
       </div>
