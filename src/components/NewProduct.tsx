@@ -40,22 +40,22 @@ const NewProducts = () => {
           <div className="flex items-center gap-4">
             <div className="w-3 h-6 bg-rose-500 rounded"></div>
             <h2 className="font-medium text-2xl">Special Discount</h2>
-            <p className="font-medium text-gray-500">Ends in</p>
-            <div className="text-md font-light">
-              <span className="flex font-bold text-md text-rose-500 gap-2 items-center">
-                <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
-                  03
-                </div>
-                :
-                <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
-                  15
-                </div>
-                :
-                <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
-                  25
-                </div>
-              </span>
-            </div>
+            <p className="hidden md:block font-medium text-gray-500">Ends in</p>
+          <div className="hidden md:flex text-md font-light">
+            <span className="flex font-bold text-md text-rose-500 gap-2 items-center">
+              <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
+                03
+              </div>
+              :
+              <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
+                15
+              </div>
+              :
+              <div className="flex justify-center w-10 p-2 bg-rose-500 rounded-md text-gray-100">
+                25
+              </div>
+            </span>
+          </div>
           </div>
           <div className="me-4 mb-1 hover:underline cursor-pointer">
             See All
