@@ -12,7 +12,7 @@ const HeaderTop = () => {
   return (
     <>
       {isVisible && (
-        <div className="border-b border-gray-200 py-1.5 bg-rose-600 hidden sm:flex justify-center items-center relative">
+        <div className="border-b border-rose-200 py-1.5 bg-gradient-to-b from-rose-500 to-rose-600 hidden sm:flex justify-center items-center relative">
           <div className="text-white text-sm mx-auto">
             30% discount on all products special for May!
           </div>

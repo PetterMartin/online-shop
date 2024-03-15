@@ -18,7 +18,7 @@ const Slide: React.FC<PropsType> = ({ img, title, mainTitle, price }) => {
           price ? "top-[50%]" : "bottom-[10%]"
         } -translate-y-1/2 space-y-2 lg:space-y-4 bg-[#ffffffa2] sm:bg-transparent p-4 sm:p-0 rounded-lg sm:rounded-none`}
       >
-        <h3 className="text-accent text-[24px] lg:text-[28px]">{title}</h3>
+        <h3 className="text-rose-500 text-[24px] lg:text-[28px]">{title}</h3>
         <h2 className="text-blackish text-[26px] md:text-[30px] lg:text-[44px] font-bold leading-[1.2]">
           {mainTitle}
         </h2>
@@ -34,7 +34,7 @@ const Slide: React.FC<PropsType> = ({ img, title, mainTitle, price }) => {
           </h3>
         )}
 
-        <div className="bg-accent text-white text-[14px] md:text-[16px] p-2 px-4 rounded-lg inline-block cursor-pointer hover:bg-blackish">
+        <div className="bg-rose-500 text-white text-[14px] md:text-[16px] p-2 px-4 rounded-lg inline-block cursor-pointer hover:bg-blackish">
           Shop Now
         </div>
       </div>
