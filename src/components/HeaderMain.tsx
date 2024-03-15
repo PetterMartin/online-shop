@@ -25,14 +25,14 @@ const HeaderMain = () => {
           <div className="flex gap-4">
             <div className="relative text-[30px] cursor-pointer">
               <FiHeart />
-              <div className="bg-rose-400 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
+              <div className="bg-rose-500 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
                 0
               </div>
             </div>
 
             <div className="relative text-[30px] cursor-pointer">
               <HiOutlineShoppingBag />
-              <div className="bg-rose-400 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
+              <div className="bg-rose-500 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
                 0
               </div>
             </div>
