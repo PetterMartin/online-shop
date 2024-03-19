@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BsSearch } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
 import { HiOutlineShoppingBag } from "react-icons/hi";
@@ -30,12 +31,14 @@ const HeaderMain = () => {
               </div>
             </div>
 
-            <div className="relative text-[30px] cursor-pointer">
-              <HiOutlineShoppingBag />
-              <div className="bg-rose-500 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
-                0
+            <Link href={`/checkout`}>
+              <div className="relative text-[30px] cursor-pointer">
+                <HiOutlineShoppingBag />
+                <div className="bg-rose-500 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
+                  0
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div className="flex gap-2">
@@ -60,7 +63,7 @@ const HeaderMain = () => {
           </div>
           <div className="flex gap-1 text-gray-600 cursor-pointer">
             <p>Home Hallvard</p>
-            <IoIosArrowDown className="mt-0.5"/>
+            <IoIosArrowDown className="mt-0.5" />
           </div>
         </div>
       </div>
