@@ -68,7 +68,7 @@ export default function Payment() {
             </div>
             <p>Betalingskort</p>
           </div>
-          <FaRegCreditCard size={25} className="text-amber-400"/>
+          <FaRegCreditCard size={25} className="text-yellow-600"/>
         </div>
 
         <div className="border border-gray-300"></div>
@@ -87,7 +87,13 @@ export default function Payment() {
             </div>
             <p>Klarna</p>
           </div>
-          <p>Klarna</p>
+          <Image
+                  className="py-2"
+                  src="/Klarna.svg"
+                  width={70}
+                  height={10}
+                  alt="Samsung Watch"
+                />
         </div>
       </div>
     );
