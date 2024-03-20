@@ -1,43 +1,7 @@
 import { create } from "zustand";
+import { Product, CartItem, CartStore } from "./types/global";
 
-interface Review {
-  id: string;
-  username: string;
-  rating: number;
-  description: string;
-}
-
-interface Product {
-  id: string;
-  title: string;
-  description: string;
-  price: number;
-  discountedPrice: number;
-  image: {
-    url: string;
-    alt: string;
-  };
-  rating: number;
-  tags: string[];
-  reviews: Review[];
-}
-
-interface CartItem extends Product {
-  count: number;
-}
-
-type CartStore = {
-  cart: CartItem[];
-  total: number;
-  visible: boolean;
-  add: (product: Product) => void;
-  remove: (id: string) => void;
-  removeOne: (id: string) => void;
-  removeAll: () => void;
-  toggleVisible: () => void;
-};
-
-export const useCartStore = create<CartStore>((set) => ({
+export const useCartStore = create<CartStore>((set, get) => ({
   cart: [],
   visible: false,
   total: 0,
@@ -69,6 +33,8 @@ export const useCartStore = create<CartStore>((set) => ({
     set((state) => ({
       visible: !state.visible,
     })),
+
+  quantity: () => get().cart.reduce((curr, acc) => (curr += acc.count), 0),
 }));
 
 function updateCart(product: Product, cart: CartItem[]): CartItem[] {
