@@ -8,7 +8,7 @@ interface propsType {
   title: string;
   desc: string;
   rating: number;
-  price: string;
+  price: number;
 }
 
 const ProductCard: React.FC<propsType> = ({
@@ -91,9 +91,7 @@ const ProductCard: React.FC<propsType> = ({
       <div className="flex flex-col gap-2 py-2">
         <div className="flex">
           <h2 className="text-gray-600 font-semibold">{desc}</h2>
-          <div className="font-bold flex gap-4">
-            ${price}
-          </div>
+          <div className="font-bold flex gap-4">${price}</div>
         </div>
         <div className="flex gap-2 text-sm">{generateRating(rating)} 4,8</div>
         <div className="bg-gradient-to-b from-rose-500 to-rose-600 text-gray-100 text-sm py-1 max-w-[140px] rounded-lg text-center mt-2">
