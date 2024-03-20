@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MobileNav from "@/components/MobileNav";
 import Footer from "@/components/Footer";
+import Cart from "@/components/Cart";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,11 +28,12 @@ export default function RootLayout({
       <body className={inter.className}>
         <HeaderTop />
         <HeaderMain />
+        <Cart />
         <Navbar />
         <MobileNav />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }
