@@ -1,17 +1,24 @@
+"use client";
 import Link from "next/link";
 import { BsSearch } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { GrLocation } from "react-icons/gr";
 import { IoIosArrowDown } from "react-icons/io";
+import { useCartStore } from "@/store";
 
 const HeaderMain = () => {
+  const { toggleVisible } = useCartStore();
+
   return (
     <div className="pt-6 pb-3">
       <div className="container sm:flex justify-between items-center">
-        <div className="font-bold text-4xl text-center pb-4 sm:pb-0 text-blackish">
-          TOKZONE
-        </div>
+        <Link
+          href={"/"}
+          className="font-bold text-4xl text-center pb-4 sm:pb-0 text-blackish"
+        >
+          STORESHOP
+        </Link>
 
         <div className="w-full mx-4 sm:w-[300px] md:w-[70%] relative border-2 rounded-xl border-gray-300 flex items-center">
           <BsSearch className="ml-4 mr-2 text-gray-500" size={16} />
@@ -24,12 +31,15 @@ const HeaderMain = () => {
 
         <div className="hidden lg:flex items-center gap-6 text-gray-500">
           <div className="flex gap-4">
-            <div className="relative text-[30px] cursor-pointer">
+            <button
+              onClick={toggleVisible}
+              className="relative text-[30px] cursor-pointer"
+            >
               <FiHeart />
               <div className="bg-rose-500 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
                 0
               </div>
-            </div>
+            </button>
 
             <Link href={`/checkout`}>
               <div className="relative text-[30px] cursor-pointer">
