@@ -5,8 +5,8 @@ import { AiFillLock } from "react-icons/ai";
 export default function Checkout() {
   return (
     <>
-      <h1 className="text-center text-2xl mt-4 mb-12 font-semibold">
-        Checkout Page
+      <h1 className="text-center text-2xl mt-4 mb-10 font-semibold">
+        Handlekurv
       </h1>
 
       <div className="flex justify-between px-6 md:px-36">
@@ -29,7 +29,7 @@ export default function Checkout() {
 
           <div className="border border-gray-300 my-8"></div>
 
-          <button className="bg-blackish text-white text-sm py-3 font-semibold rounded-lg mb-12 tracking-wider hover:opacity-10 transition duration-300 ease-in-out">
+          <button className="bg-blackish text-white text-sm py-3 font-semibold rounded-lg mb-12 tracking-wider hover:opacity-85 transition duration-300 ease-in-out">
             Kjøp nå
           </button>
         </div>
