@@ -8,8 +8,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useCartStore } from "@/store";
 
 const HeaderMain = () => {
-  const { toggleVisible } = useCartStore();
-
+  const { toggleVisible, quantity } = useCartStore();
+  const itemCount = quantity();
   return (
     <div className="pt-6 pb-3">
       <div className="container sm:flex justify-between items-center">
@@ -37,7 +37,7 @@ const HeaderMain = () => {
             >
               <FiHeart />
               <div className="bg-rose-500 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
-                0
+                {itemCount}
               </div>
             </button>
 
