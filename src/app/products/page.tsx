@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
+import AddButton from "@/components/AddButton";
 
 const data = {
   data: [
@@ -580,14 +581,14 @@ const NewProducts = () => {
                 )}`}
               >
                 <ProductCard
-                  img={"/shirt-1.jpg"}
+                  img={item.image.url}
                   title={item.title}
                   desc={item.title}
                   rating={item.rating}
                   price={item.discountedPrice}
                 />
               </Link>
-              <button>Add to Cart ✚</button>
+              <AddButton item={item}></AddButton>
             </div>
           ))}
         </div>

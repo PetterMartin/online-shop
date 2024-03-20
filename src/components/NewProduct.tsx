@@ -1,8 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import ProductCard from "./ProductCard";
-import { useCartStore } from "@/store";
+import AddButton from "./AddButton";
 
 const data = {
   data: [
@@ -570,8 +568,6 @@ const data = {
 const products = data.data;
 
 const NewProducts = () => {
-  const { add } = useCartStore();
-
   return (
     <div>
       <div className="container flex flex-col gap-4 pt-16">
@@ -606,14 +602,14 @@ const NewProducts = () => {
             <div key={item.id}>
               <Link href={`/products/${item.id}`}>
                 <ProductCard
-                  img={"/shirt-1.jpg"}
+                  img={item.image.url}
                   title={item.title}
                   desc={item.title}
                   rating={item.rating}
                   price={item.discountedPrice}
                 />
               </Link>
-              <button onClick={() => add(item)}>Add to Cart ✚</button>
+              <AddButton item={item}></AddButton>
             </div>
           ))}
         </div>
