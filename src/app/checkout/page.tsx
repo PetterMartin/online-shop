@@ -1,10 +1,13 @@
 import Payment from "@/components/checkout/Payment";
 import Image from "next/image";
+import { AiFillLock } from "react-icons/ai";
 
 export default function Checkout() {
   return (
     <>
-      <h1 className="text-center text-2xl my-4 font-semibold">Checkout Page</h1>
+      <h1 className="text-center text-2xl mt-4 mb-12 font-semibold">
+        Checkout Page
+      </h1>
 
       <div className="flex justify-between px-6 md:px-36">
         <div className="flex flex-col w-full pe-12">
@@ -20,47 +23,46 @@ export default function Checkout() {
             </div>
           </div>
 
+          <h1 className="font-semibold text-lg mt-8 mb-4">Betalingsmetoder</h1>
+
           <Payment />
+
+          <div className="border border-gray-300 my-8"></div>
+
+          <button className="bg-blackish text-white text-sm py-3 font-semibold rounded-lg mb-12 tracking-wider hover:opacity-10 transition duration-300 ease-in-out">
+            Kjøp nå
+          </button>
         </div>
 
         <div className="flex flex-col w-full ps-12">
-          <div className="flex flex-col gap-6">
-            <div className="flex gap-4">
-              <div className="border border-gray-400 rounded-lg">
-                <Image
-                  className="py-2"
-                  src="/Samsung-Watch.png"
-                  width={60}
-                  height={60}
-                  alt="Samsung Watch"
-                />
-              </div>
-              <div className="flex mt-2 gap-20">
-                <div>
-                  <h2 className="font-semibold">Samsung Watch</h2>
-                  <p className="text-gray-500 font-light ">Variant: 42</p>
-                </div>
-                <div className="font-semibold">kr 1249.00</div>
-              </div>
-            </div>
+          <div className="flex flex-col items-center">
+            <p className="text-gray-700 text-sm">Total amount</p>
+            <h1 className="font-bold text-3xl py-3">kr 2498.00</h1>
+            <p className="text-gray-500 text-xs flex items-center gap-1">
+              <AiFillLock size={12} className="text-green-600" /> Secure Payment{" "}
+            </p>
+          </div>
 
-            <div className="flex gap-4">
-              <div className="border border-gray-400 rounded-lg">
-                <Image
-                  className="py-2"
-                  src="/Samsung-Watch.png"
-                  width={60}
-                  height={60}
-                  alt="Samsung Watch"
-                />
-              </div>
-              <div className="flex mt-2 gap-20">
+          <div className="border border-gray-300 my-12"></div>
+
+          <div className="flex flex-col gap-6">
+            <div className="flex justify-between">
+              <div className="flex gap-4">
+                <div className="border border-gray-400 rounded-lg">
+                  <Image
+                    className="py-2"
+                    src="/Samsung-Watch.png"
+                    width={60}
+                    height={60}
+                    alt="Samsung Watch"
+                  />
+                </div>
                 <div>
                   <h2 className="font-semibold">Samsung Watch</h2>
                   <p className="text-gray-500 font-light ">Variant: 42</p>
                 </div>
-                <div className="font-semibold">kr 1249.00</div>
               </div>
+                <div className="font-semibold">kr 1249.00</div>
             </div>
           </div>
 
