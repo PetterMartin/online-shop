@@ -9,11 +9,9 @@ const HeaderMain = () => {
   return (
     <div className="pt-6 pb-3">
       <div className="container sm:flex justify-between items-center">
-        <Link href={`/`}>
-          <div className="font-bold text-4xl text-center pb-4 sm:pb-0 text-blackish">
-            TOKZONE
-          </div>
-        </Link>
+        <div className="font-bold text-4xl text-center pb-4 sm:pb-0 text-blackish">
+          TOKZONE
+        </div>
 
         <div className="w-full mx-4 sm:w-[300px] md:w-[70%] relative border-2 rounded-xl border-gray-300 flex items-center">
           <BsSearch className="ml-4 mr-2 text-gray-500" size={16} />
