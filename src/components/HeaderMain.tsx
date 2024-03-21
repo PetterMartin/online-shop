@@ -61,10 +61,10 @@ const HeaderMain = () => {
       </div>
       <div className="container hidden lg:flex justify-between items-center px-12 mt-3 text-sm font-semibold">
         <div className="flex gap-3 text-gray-500 ms-48">
-          <p className="cursor-pointer hover:underline">Laptop Asus</p>
-          <p className="cursor-pointer hover:underline">HP Xiaomi</p>
-          <p className="cursor-pointer hover:underline">Iphone 15</p>
-          <p className="cursor-pointer hover:underline">Vision Pro</p>
+          <p className="cursor-pointer hover:underline">Wireless Earbuds</p>
+          <p className="cursor-pointer hover:underline">Black Watch</p>
+          <p className="cursor-pointer hover:underline">Pink Shoes</p>
+          <p className="cursor-pointer hover:underline">Gaming Mouse</p>
         </div>
         <div className="flex gap-4">
           <div className="flex gap-1 text-gray-400 cursor-pointer">
