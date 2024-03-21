@@ -33,29 +33,29 @@ const HeaderMain = () => {
           <div className="flex gap-4">
             <button
               onClick={toggleVisible}
-              className="relative text-[30px] cursor-pointer"
+              className="relative cursor-pointer"
             >
-              <FiHeart />
-              <div className="bg-rose-500 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
+              <FiHeart size={27}/>
+              <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1">
                 {itemCount}
               </div>
             </button>
 
             <Link href={`/checkout`}>
-              <div className="relative text-[30px] cursor-pointer">
-                <HiOutlineShoppingBag />
-                <div className="bg-rose-500 rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1">
+              <div className="relative cursor-pointer">
+                <HiOutlineShoppingBag size={27} />
+                <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1">
                   0
                 </div>
               </div>
             </Link>
           </div>
 
-          <div className="flex gap-2">
-            <div className="bg-red-600 rounded-full w-8 h-8 flex"></div>
-            <p className="text-[15px] flex items-center text-gray-600 font-bold">
-              Hallvard
+          <div className="flex flex-col">
+            <p className="text-[16px] flex items-center text-gray-600 font-semibold">
+              Tom Jones
             </p>
+            <p className="text-[12px] font-semibold">Tom123@gmail.com</p>
           </div>
         </div>
       </div>
@@ -66,10 +66,10 @@ const HeaderMain = () => {
           <p className="cursor-pointer hover:underline">Pink Shoes</p>
           <p className="cursor-pointer hover:underline">Gaming Mouse</p>
         </div>
-        <div className="flex gap-4">
-          <div className="flex gap-1 text-gray-400 cursor-pointer">
+        <div className="flex gap-3">
+          <div className="flex gap-1 text-gray-500 cursor-pointer">
             <GrLocation size={18} />
-            <p>Deliver to</p>
+            <p className="text-[13px]">Deliver to</p>
           </div>
           <div className="flex gap-1 text-gray-600 cursor-pointer">
             <p>Home Hallvard</p>
