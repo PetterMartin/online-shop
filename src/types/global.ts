@@ -5,6 +5,16 @@ export interface Review {
   description: string;
 }
 
+interface Meta {
+  isFirstPage: boolean;
+  isLastPage: boolean;
+  currentPage: number;
+  previousPage: number | null;
+  nextPage: number | null;
+  pageCount: number;
+  totalCount: number;
+}
+
 export interface Product {
   id: string;
   title: string;
@@ -35,3 +45,8 @@ export type CartStore = {
   removeAll: () => void;
   toggleVisible: () => void;
 };
+
+export interface ApiResponse {
+  data: Product[];
+  meta: Meta;
+}
