@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 import { FaArrowRight, FaCcVisa, FaApplePay, FaPaypal, FaCcAmex, FaCcMastercard } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { GrLocation } from "react-icons/gr";
@@ -40,7 +40,9 @@ const Footer = () => {
           <h2 className="font-semibold text-md">Service</h2>
           <div className="flex flex-col gap-2 text-gray-400 text-sm">
             <p className="hover:underline cursor-pointer">About Us</p>
-            <p className="hover:underline cursor-pointer">Careers</p>
+            <Link href={`/contact`}>
+            <p className="hover:underline cursor-pointer">Contact Us</p>
+            </Link>
             <p className="hover:underline cursor-pointer">
               Delivery Information
             </p>
