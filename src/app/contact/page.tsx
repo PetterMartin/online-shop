@@ -3,7 +3,6 @@ import React from "react";
 import { HiOutlineMail } from "react-icons/hi";
 import { GrLocation } from "react-icons/gr";
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
-import { MdTouchApp } from "react-icons/md";
 
 export default function page() {
   return (
