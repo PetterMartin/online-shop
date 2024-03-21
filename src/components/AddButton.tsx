@@ -38,7 +38,7 @@ export default function AddButton({ item }: { item: Product }) {
                   {item.title} added
                 </h2>
                 <button
-                  className="h-[48px] rounded-md bg-gradient-to-b from-rose-500 to-rose-600 text-white hover:from-rose-400 hover:to-rose-500 flex justify-center items-center gap-2"
+                  className="h-[48px] rounded-md bg-gradient-to-b from-rose-500 to-rose-600 text-white hover:opacity-85 flex justify-center items-center gap-2 transition duration-300 ease-in-out"
                   onClick={() => {
                     toggleVisible();
                     toast.dismiss(t);
