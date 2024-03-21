@@ -22,7 +22,7 @@ const Slide: React.FC<PropsType> = ({ img, buttonPosition = "center" }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative bg-transparent">
       <div
         className={`absolute ${getPositionClasses()} ${
           buttonPosition !== "center" ? "" : ""
