@@ -22,7 +22,7 @@ export default function AddButton({ item }: { item: Product }) {
                 onClick={() => toast.dismiss(t)}
                 className="absolute right-0 top-0 h-[48px] -translate-y-1/2 translate-x-1/2 "
               >
-                <p className="h-6 w-6 rounded-full bg-rose-400 font-light text-white hover:bg-rose-100 flex items-center justify-center">
+                <p className="h-6 w-6 rounded-full bg-rose-400 font-light text-white hover:opacity-85 transition duration-300 ease-in-out flex items-center justify-center">
                   <IoIosClose size={100} />
                 </p>
               </button>
