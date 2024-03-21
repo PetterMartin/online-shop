@@ -10,7 +10,7 @@ export default function page() {
       <h1 className="text-3xl font-semibold text-center py-6">Kontakt Oss</h1>
 
       <div className=" px-6 xl:px-36 mb-12">
-        <div className="bg-white flex justify-between p-6 rounded-2xl shadow-lg">
+        <div className="bg-white border-2 border-gray-300 flex justify-between p-6 rounded-2xl">
           <div className="hidden xl:block bg-blackish text-white p-12 rounded-2xl">
             <div className="flex flex-col gap-4">
               <h1 className="text-2xl font-semibold">Kontakt Informasjon</h1>
