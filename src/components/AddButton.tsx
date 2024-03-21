@@ -10,13 +10,14 @@ export default function AddButton({ item }: { item: Product }) {
     <button
       className="px-2 bg-gradient-to-b transition-all duration-500 from-rose-500 to-rose-600 text-gray-100 text-sm py-1 max-w-[140px] rounded-lg text-center mt-2 hover:from-rose-400 hover:to-rose-500"
       onClick={() => {
+        console.log("asdfasdf");
         add(item);
         toast.success(`${item.title} added to cart`, {
           action: {
             label: "See cart",
             onClick: () => toggleVisible(),
           },
-          duration: 4500,
+          duration: 4000,
         });
       }}
     >
