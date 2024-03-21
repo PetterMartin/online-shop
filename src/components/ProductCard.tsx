@@ -84,13 +84,13 @@ const ProductCard: React.FC<propsType> = ({ item }) => {
 
   if (item)
     return (
-      <div className="w-[170px] md:w-auto">
+      <div className="md:w-auto">
         <Link
           href={`/products/${item.id}?title=${encodeURIComponent(item.title)}`}
         >
           <div>
             <Image
-              className=" rounded-md h-[170px] md:w-[260px] md:h-[260px]"
+              className=" rounded-md h-[160px] md:w-[260px] md:h-[260px]"
               src={item.image.url}
               width={200}
               height={200}
