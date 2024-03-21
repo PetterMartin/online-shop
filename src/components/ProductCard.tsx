@@ -84,13 +84,13 @@ const ProductCard: React.FC<propsType> = ({ item }) => {
 
   if (item)
     return (
-      <>
+      <div className="md:w-auto">
         <Link
           href={`/products/${item.id}?title=${encodeURIComponent(item.title)}`}
         >
           <div>
             <Image
-              className="w-[260px] rounded-md h-[260px]"
+              className=" rounded-md h-[160px] md:w-[260px] md:h-[260px]"
               src={item.image.url}
               width={200}
               height={200}
@@ -100,7 +100,7 @@ const ProductCard: React.FC<propsType> = ({ item }) => {
             />
           </div>
           <div className="flex flex-col gap-2 py-2">
-            <div className="flex">
+            <div className="flex flex-col">
               <h2 className="text-gray-600 font-semibold">{item.title}</h2>
               <div className="font-bold flex gap-4">
                 ${item.discountedPrice}
@@ -112,7 +112,7 @@ const ProductCard: React.FC<propsType> = ({ item }) => {
           </div>
         </Link>
         <AddButton item={item}></AddButton>
-      </>
+      </div>
     );
 };
 
