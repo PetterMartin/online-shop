@@ -44,6 +44,7 @@ export type CartStore = {
   removeOne: (id: string) => void;
   removeAll: () => void;
   toggleVisible: () => void;
+  close: (fn?: () => void) => void;
 };
 
 export interface ApiResponse {

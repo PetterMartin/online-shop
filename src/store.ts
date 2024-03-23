@@ -34,6 +34,14 @@ export const useCartStore = create<CartStore>((set, get) => ({
       visible: !state.visible,
     })),
 
+  close: (fn) => {
+    () =>
+      set((state) => ({
+        visible: false,
+      }));
+    if (fn) fn();
+  },
+
   quantity: () => get().cart.reduce((curr, acc) => (curr += acc.count), 0),
 }));
 

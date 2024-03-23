@@ -7,7 +7,6 @@ body {
 }
 
 @layer components {
-
   .navbar__link:hover {
     color: #ff8f9c;
     transition: all 0.4s;
@@ -51,7 +50,7 @@ body {
     height: 60px;
     z-index: 2;
   }
-  .navigation ul li a {
+  .navigation ul li .nav-link {
     position: relative;
     display: flex;
     justify-content: center;
@@ -59,7 +58,7 @@ body {
     height: 100%;
     width: 100%;
   }
-  .navigation ul li a .icon {
+  .navigation ul li .nav-link .icon {
     position: relative;
     display: flex;
     justify-content: center;
@@ -67,18 +66,18 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    color: #DBDBDB;
+    color: #dbdbdb;
     font-size: 1.5em;
     transition: 0.5s;
   }
-  .navigation ul li.active a .icon {
-    background: #FF7C7F;
+  .navigation ul li.active .nav-link .icon {
+    background: #ff7c7f;
     color: white;
     transform: translateY(-27px);
   }
-  .navigation ul li a .icon::before {
-    content: '';
-    background: #FF7C7F;
+  .navigation ul li .nav-link .icon::before {
+    content: "";
+    background: #ff7c7f;
     position: absolute;
     top: 10px;
     left: 0;
@@ -87,9 +86,9 @@ body {
     border-radius: 50%;
     filter: blur(5px);
     opacity: 0;
-    z-index: -1; 
+    z-index: -1;
   }
-  .navigation ul li.active a .icon::before {
+  .navigation ul li.active .nav-link .icon::before {
     opacity: 0.5;
   }
 
@@ -104,7 +103,7 @@ body {
     transition: 0.5s;
   }
   .indicator::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 5px;
     left: -28px;
@@ -115,7 +114,7 @@ body {
     box-shadow: 15px 18px white;
   }
   .indicator::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 5px;
     right: -28px;
