@@ -31,24 +31,19 @@ const HeaderMain = () => {
 
         <div className="hidden lg:flex items-center gap-6 text-gray-500">
           <div className="flex gap-4">
-            <button
-              onClick={toggleVisible}
-              className="relative cursor-pointer"
-            >
-              <FiHeart size={27}/>
-              <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1">
-                {itemCount}
-              </div>
+            <button className="relative cursor-pointer">
+              <FiHeart size={27} />
+              <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1"></div>
             </button>
 
-            <Link href={`/checkout`}>
+            <button onClick={toggleVisible}>
               <div className="relative cursor-pointer">
                 <HiOutlineShoppingBag size={27} />
                 <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1">
-                  0
+                  {itemCount}
                 </div>
               </div>
-            </Link>
+            </button>
           </div>
 
           <div className="flex flex-col">
