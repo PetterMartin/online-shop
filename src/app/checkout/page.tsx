@@ -1,15 +1,19 @@
+"use client";
 import Payment from "@/components/checkout/Payment";
 import Image from "next/image";
 import { AiFillLock } from "react-icons/ai";
+import { useCartStore } from "@/store";
 
 export default function Checkout() {
+  const { cart, total } = useCartStore();
+
   return (
     <>
       <h1 className="text-center text-2xl mt-4 mb-10 font-semibold">
         Handlekurv
       </h1>
 
-      <div className="px-6 md:px-36">
+      <div className="px-6 lg:px-36">
         <div className="flex flex-col md:flex-row">
           <div className="flex flex-col w-full md:pe-12">
             <div className="flex flex-col border border-gray-600 rounded p-2">
@@ -40,7 +44,7 @@ export default function Checkout() {
           <div className="flex flex-col w-full md:ps-12">
             <div className="flex flex-col items-center">
               <p className="text-gray-700 text-sm">Total amount</p>
-              <h1 className="font-bold text-3xl py-3">kr 2498.00</h1>
+              <h1 className="font-bold text-3xl py-3">{total}</h1>
               <p className="text-gray-500 text-xs flex items-center gap-1">
                 <AiFillLock size={12} className="text-green-600" /> Secure
                 Payment{" "}
@@ -48,27 +52,30 @@ export default function Checkout() {
             </div>
 
             <div className="border border-gray-300 my-12"></div>
-
-            <div className="flex flex-col gap-6">
-              <div className="flex justify-between">
-                <div className="flex gap-4">
-                  <div className="border border-gray-400 rounded-lg">
-                    <Image
-                      className="py-2"
-                      src="/Samsung-Watch.png"
-                      width={60}
-                      height={60}
-                      alt="Samsung Watch"
-                    />
+            {cart.map((item) => (
+              <div key={item.id} className="flex flex-col gap-6 my-2">
+                <div className="flex justify-between">
+                  <div className="flex gap-4">
+                    <div className="border border-gray-400 rounded-lg overflow-hidden">
+                      <Image
+                        className=" h-[60px] w-[60px] object-cover"
+                        src={item.image.url}
+                        width={60}
+                        height={60}
+                        alt={item.image.alt}
+                      />
+                    </div>
+                    <div>
+                      <h2 className="font-semibold">{item.title}</h2>
+                      <p className="text-gray-500 font-light ">
+                        Quantity: {item.count}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h2 className="font-semibold">Samsung Watch</h2>
-                    <p className="text-gray-500 font-light ">Variant: 42</p>
-                  </div>
+                  <div className="font-semibold">kr {item.discountedPrice}</div>
                 </div>
-                <div className="font-semibold">kr 1249.00</div>
               </div>
-            </div>
+            ))}
 
             <div className="border-t-2 border-b-2 py-4 mt-6">
               <div className="flex justify-between">
@@ -91,7 +98,7 @@ export default function Checkout() {
             </div>
             <div className="flex justify-between py-4">
               <p className="font-semibold">Sluttsum</p>
-              <div className="font-semibold text-lg">kr 2498.00</div>
+              <div className="font-semibold text-lg">kr {total}</div>
             </div>
           </div>
         </div>
