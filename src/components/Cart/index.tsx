@@ -27,24 +27,24 @@ export default function Cart() {
         onClick={toggleVisible}
       ></div>
       <div
-        className={`fixed top-0 z-50 right-0 h-[100dvh] flex flex-col justify-between w-[800px] max-w-[97vw] overflow-x-scroll bg-white rounded-md px-2 py-6 md:p-8 transition-all duration-500 ${
+        className={`fixed top-0 z-50 flex flex-col right-0 h-[calc(100dvh-85px)] lg:h-[100dvh]  overflow-hidden justify-between w-[800px] max-w-[97vw] bg-white rounded-md px-2 py-6 md:p-8 transition-all duration-500 ${
           visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
         }`}
       >
-        <div>
-          <div className="flex justify-end">
-            <button onClick={toggleVisible} className="text-3xl">
-              <IoClose />
-            </button>
-          </div>
+        <div className="flex justify-between">
           <h2 className="text-2xl font-medium mb-2">My cart:</h2>
+          <button onClick={toggleVisible} className="text-3xl">
+            <IoClose />
+          </button>
+        </div>
+        <div className="overflow-y-auto flex-grow">
           <ul className="flex flex-col gap-4 min-w-full">
             {cart.map((item) => (
               <div
                 key={item.id}
                 className="flex flex-col gap-6 border-2 rounded-md overflow-hidden"
               >
-                <div className="flex gap-4 items-center px-4">
+                <div className="flex gap-4 items-center px-1 md:px-4">
                   <div className="h-20 w-20">
                     <Image
                       className="h-full w-full object-cover"
@@ -55,7 +55,7 @@ export default function Cart() {
                       alt={item.image.alt}
                     />
                   </div>
-                  <div className="grid gap-2 py-4">
+                  <div className="grid gap-2 py-1 md:py-2">
                     <h2 className="font-semibold">{item.title}</h2>
                     <div className="flex gap-4 items-center">
                       <button
@@ -90,7 +90,7 @@ export default function Cart() {
           </ul>
         </div>
         {cart.length > 0 ? (
-          <div className="grid gap-4 pt-4">
+          <div className="grid gap-4 pt-4  bg-white w-full">
             <button
               className="border bg-rose-50 p-2 flex justify-center items-center gap-2 h-[48px] transition duration-300 hover:border-red-600"
               onClick={removeAll}
