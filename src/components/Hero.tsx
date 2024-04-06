@@ -4,6 +4,12 @@ import React from "react";
 import Slider from "react-slick";
 import Slide from "./Slide";
 
+interface SlideDataItem {
+  id: number;
+  img: string;
+  buttonPosition?: "left" | "center" | "right";
+}
+
 const Hero = () => {
   var settings = {
     dots: true,
@@ -11,28 +17,27 @@ const Hero = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    pauseOnHover: false,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
     arrows: false,
+    fade: true,
   };
 
-  const slideData = [
+  const slideData: SlideDataItem[] = [
     {
       id: 0,
-      img: "/Stadia.avif",
-      title: "Trending Item",
-      mainTitle: "GOOGLE STADIA",
-      price: "$20",
+      img: "/Samsung.jpeg",
+      buttonPosition: "center",
     },
     {
       id: 1,
-      img: "/banner-2.jpg",
-      title: "Trending Accessories",
-      mainTitle: "MODERN SUNGLASSES",
-      price: "$15",
+      img: "/Bose.webp",
+      buttonPosition: "right",
     },
     {
       id: 2,
-      img: "/Samsung.jpeg",
+      img: "/Shoes.webp",
+      buttonPosition: "left",
     },
   ];
 
@@ -44,9 +49,7 @@ const Hero = () => {
             <Slide
               key={item.id}
               img={item.img}
-              title={item.title}
-              mainTitle={item.mainTitle}
-              price={item.price}
+              buttonPosition={item.buttonPosition}
             />
           ))}
         </Slider>

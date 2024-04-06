@@ -4,11 +4,13 @@ import "./globals.css";
 import HeaderTop from "@/components/HeaderTop";
 import HeaderMain from "@/components/HeaderMain";
 import Navbar from "@/components/Navbar";
+import { Toaster } from "sonner";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MobileNav from "@/components/MobileNav";
 import Footer from "@/components/Footer";
+import Cart from "@/components/Cart";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,13 +27,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Toaster position="top-center" richColors />
         <HeaderTop />
         <HeaderMain />
+        <Cart />
         <Navbar />
         <MobileNav />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }

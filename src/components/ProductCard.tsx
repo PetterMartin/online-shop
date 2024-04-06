@@ -1,25 +1,31 @@
 import Image from "next/image";
 import React from "react";
+import { Product } from "@/types/global";
 
 import { TiStarFullOutline, TiStarOutline } from "react-icons/ti";
+import AddButton from "./AddButton";
+import Link from "next/link";
 
 interface propsType {
-  img: string;
-  title: string;
-  desc: string;
-  rating: number;
-  price: string;
+  item: Product;
 }
 
-const ProductCard: React.FC<propsType> = ({
-  img,
-  title,
-  desc,
-  rating,
-  price,
-}) => {
+const ProductCard: React.FC<propsType> = ({ item }) => {
   const generateRating = (rating: number) => {
-    switch (rating) {
+    const roundedRating = Math.round(rating);
+
+    switch (roundedRating) {
+      case 0:
+        return (
+          <div className="flex gap-1 text-[20px] text-amber-400">
+            <TiStarOutline />
+            <TiStarOutline />
+            <TiStarOutline />
+            <TiStarOutline />
+            <TiStarOutline />
+          </div>
+        );
+
       case 1:
         return (
           <div className="flex gap-1 text-[20px] text-amber-400">
@@ -76,32 +82,38 @@ const ProductCard: React.FC<propsType> = ({
     }
   };
 
-  return (
-    <div>
-      <div>
-        <Image
-          className="w-full h-auto rounded-md"
-          src={img}
-          width={200}
-          height={300}
-          alt={title}
-        />
-      </div>
-
-      <div className="flex flex-col gap-2 py-2">
-        <div className="flex">
-          <h2 className="text-gray-600 font-semibold">{desc}</h2>
-          <div className="font-bold flex gap-4">
-            ${price}
+  if (item)
+    return (
+      <div className="md:w-auto">
+        <Link
+          href={`/products/${item.id}?title=${encodeURIComponent(item.title)}`}
+        >
+          <div>
+            <Image
+              className=" rounded-md h-[160px] md:w-[260px] md:h-[260px]"
+              src={item.image.url}
+              width={200}
+              height={200}
+              style={{ objectFit: "cover" }}
+              objectFit=""
+              alt={item.title}
+            />
           </div>
-        </div>
-        <div className="flex gap-2 text-sm">{generateRating(rating)} 4,8</div>
-        <div className="bg-rose-500 text-gray-100 text-sm py-1 max-w-[140px] rounded-lg text-center mt-2">
-          Limited time deal
-        </div>
+          <div className="flex flex-col gap-2 py-2">
+            <div className="flex flex-col">
+              <h2 className="text-gray-600 font-semibold">{item.title}</h2>
+              <div className="font-bold flex gap-4">
+                ${item.discountedPrice}
+              </div>
+            </div>
+            <div className="flex gap-2 text-sm">
+              {generateRating(item.rating)} {item.rating}
+            </div>
+          </div>
+        </Link>
+        <AddButton item={item}></AddButton>
       </div>
-    </div>
-  );
+    );
 };
 
 export default ProductCard;

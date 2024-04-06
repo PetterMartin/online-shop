@@ -1,71 +1,89 @@
-"use client"
+"use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaHeart, FaHouse } from "react-icons/fa6";
 import { IoBag } from "react-icons/io5";
 import { HiMiniUser } from "react-icons/hi2";
 import { AiFillAppstore } from "react-icons/ai";
+import { useCartStore } from "@/store";
+import Link from "next/link";
 
 const MobileNav = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [prevActive, setPrevActive] = useState(0);
+  const { toggleVisible, quantity, visible } = useCartStore();
+  const itemCount = quantity();
+
+  useEffect(() => {
+    if (!visible && prevActive !== 2) setActiveIndex(prevActive);
+  }, [visible]);
 
   const handleActiveLink = (index: number) => {
+    if (activeIndex === 2) toggleVisible();
     setActiveIndex(index);
+    setPrevActive(activeIndex);
   };
 
   return (
     <>
-      <div className="navigation lg:hidden fixed bottom-0">
+      <div className="navigation lg:hidden fixed bottom-0 z-50">
         <ul>
           <li
-            className={`list ${activeIndex === 0 ? "active" : ""}`}
-            onClick={() => handleActiveLink(0)}
+            className={`list ${activeIndex === 0 && !visible ? "active" : ""}`}
+            onClick={() => {
+              handleActiveLink(0);
+            }}
           >
-            <a href="#">
+            <Link href={"/"} className="nav-link">
               <span className="icon">
                 <FaHouse />
               </span>
-            </a>
+            </Link>
           </li>
           <li
-            className={`list ${activeIndex === 1 ? "active" : ""}`}
+            className={`list ${activeIndex === 1 && !visible ? "active" : ""}`}
             onClick={() => handleActiveLink(1)}
           >
-            <a href="#">
+            <button className="nav-link">
               <span className="icon">
                 <FaHeart />
               </span>
-            </a>
+            </button>
           </li>
           <li
-            className={`list ${activeIndex === 2 ? "active" : ""}`}
-            onClick={() => handleActiveLink(2)}
+            className={`list ${activeIndex === 2 || visible ? "active" : ""}`}
+            onClick={() => {
+              handleActiveLink(2);
+            }}
           >
-            <a href="#">
+            <button className="nav-link" onClick={toggleVisible}>
               <span className="icon">
                 <IoBag />
+                <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1">
+                  {itemCount}
+                </div>
               </span>
-            </a>
+            </button>
           </li>
           <li
-            className={`list ${activeIndex === 3 ? "active" : ""}`}
+            className={`list ${activeIndex === 3 && !visible ? "active" : ""}`}
             onClick={() => handleActiveLink(3)}
           >
-            <a href="#">
+            <button className="nav-link">
               <span className="icon">
                 <AiFillAppstore />
               </span>
-            </a>
+            </button>
           </li>
           <li
-            className={`list ${activeIndex === 4 ? "active" : ""}`}
+            className={`list ${activeIndex === 4 && !visible ? "active" : ""}`}
             onClick={() => handleActiveLink(4)}
           >
-            <a href="#">
-              <span className="icon">
+            <button className="nav-link">
+              <span className=" icon">
                 <HiMiniUser />
               </span>
-            </a>
+            </button>
           </li>
           <div className="indicator"></div>
         </ul>
