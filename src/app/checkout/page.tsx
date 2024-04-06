@@ -1,14 +1,40 @@
 "use client";
 import Payment from "@/components/checkout/Payment";
+import SuccessModal from "@/components/Success";
 import Image from "next/image";
 import { AiFillLock } from "react-icons/ai";
 import { useCartStore } from "@/store";
+import { useState } from "react";
+import { FaCheck } from "react-icons/fa6";
+import { toast } from "sonner";
+import Spinner from "@/components/Spinner";
+
+import { useRouter } from "next/navigation";
 
 export default function Checkout() {
+  const router = useRouter();
+  const { removeAll } = useCartStore();
+
   const { cart, total } = useCartStore();
+  const [success, setSuccess] = useState(false);
+  const [isAccepted, setIsAccepted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const handlePurchase = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setSuccess(true);
+    }, 400);
+
+    setTimeout(() => {
+      removeAll();
+      router.push("/");
+    }, 3000);
+  };
 
   return (
     <>
+      {success && <SuccessModal></SuccessModal>}
       <h1 className="text-center text-2xl mt-4 mb-10 font-semibold">
         Handlekurv
       </h1>
@@ -32,12 +58,22 @@ export default function Checkout() {
               Betalingsmetoder
             </h1>
 
-            <Payment />
+            <Payment onAcceptTerms={() => setIsAccepted(true)} />
 
             <div className="border border-gray-300 my-8"></div>
 
-            <button className="bg-blackish text-white text-sm py-3 font-semibold rounded-lg mb-12 tracking-wider hover:opacity-85 transition duration-300 ease-in-out">
-              Kjøp nå
+            <button
+              onClick={() => {
+                if (!isAccepted) {
+                  toast.error("Please accept the terms and conditions");
+                } else handlePurchase();
+              }}
+              className={`${
+                !isAccepted && "opacity-85"
+              } bg-blackish flex items-center justify-center text-white text-sm py-3 font-semibold rounded-lg mb-12 tracking-wider hover:opacity-85 transition duration-300 ease-in-out h-[48px]`}
+            >
+              {!isLoading && !success && "Kjøp nå"}
+              {isLoading && <Spinner />} {success && <FaCheck />}
             </button>
           </div>
 
