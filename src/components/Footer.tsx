@@ -12,14 +12,14 @@ const Footer = () => {
     <div className="px-6 md:px-36 bg-blackish text-gray-100">
       <div className="flex flex-col md:flex-row md:justify-between py-8">
         <div className="flex flex-col gap-4 md:w-1/4 items-center md:items-start">
-          <h1 className="font-bold text-2xl ">TOKZONE</h1>
+          <h1 className="font-bold text-2xl ">STORESHOP</h1>
           <div className="flex gap-2 items-center text-sm">
             <LiaPhoneVolumeSolid size={20} />
             (+47)875-462-0127
           </div>
           <div className="flex gap-2 items-center text-sm">
             <HiOutlineMail size={20} />
-            tokzone@example.com
+            storeshop@example.com
           </div>
           <div className="flex gap-2 max-w-[150px] text-sm">
             <GrLocation size={30} />
