@@ -38,6 +38,7 @@ export type CartStore = {
   cart: CartItem[];
   total: number;
   visible: boolean;
+  search: string;
   quantity: () => number;
   add: (product: Product) => void;
   remove: (id: string) => void;
@@ -45,6 +46,7 @@ export type CartStore = {
   removeAll: () => void;
   toggleVisible: () => void;
   close: (fn?: () => void) => void;
+  setSearch: (query: string) => void;
 };
 
 export interface ApiResponse {

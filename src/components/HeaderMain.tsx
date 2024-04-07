@@ -6,10 +6,24 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { GrLocation } from "react-icons/gr";
 import { IoIosArrowDown } from "react-icons/io";
 import { useCartStore } from "@/store";
+import { useRouter } from "next/navigation";
 
 const HeaderMain = () => {
-  const { toggleVisible, quantity } = useCartStore();
+  const router = useRouter();
+  const { quantity, setSearch } = useCartStore();
   const itemCount = quantity();
+
+  const handleSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(e);
+    const searchValue = e.currentTarget.search.value;
+    router.push(`/products?search=${searchValue}`);
+  };
+
+  const handleSearchChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setSearch(e.currentTarget.value);
+  };
+
   return (
     <div className="pt-6 pb-3">
       <div className="container sm:flex justify-between items-center">
@@ -20,14 +34,22 @@ const HeaderMain = () => {
           STORESHOP
         </Link>
 
-        <div className="w-full mx-4 sm:w-[300px] md:w-[70%] relative border-2 rounded-xl border-gray-300 flex items-center">
-          <BsSearch className="ml-4 mr-2 text-gray-500" size={16} />
+        <form
+          onSubmit={handleSubmitSearch}
+          className="w-full mx-4 sm:w-[300px] md:w-[70%] relative border-2 rounded-xl border-gray-300 flex items-center"
+        >
+          <button>
+            <BsSearch className="ml-4 mr-2 text-gray-500" size={16} />
+          </button>
           <input
+            onChange={handleSearchChange}
+            name="search"
+            required
             className="p-2 rounded-lg w-full bg-transparent"
             type="text"
             placeholder="Search for product"
           />
-        </div>
+        </form>
 
         <div className="hidden lg:flex items-center gap-6 text-gray-500">
           <div className="flex gap-4">
@@ -36,7 +58,7 @@ const HeaderMain = () => {
               <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1"></div>
             </button>
 
-            <button onClick={toggleVisible}>
+            <button>
               <div className="relative cursor-pointer">
                 <HiOutlineShoppingBag size={27} />
                 <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1">
