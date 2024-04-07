@@ -4,8 +4,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaRegCreditCard } from "react-icons/fa6";
 
-export default function Payment() {
-  const [isActiveVipps, setIsActiveVipps] = useState(false);
+export default function Payment({
+  onAcceptTerms,
+}: {
+  onAcceptTerms: () => void;
+}) {
+  const [isActiveVipps, setIsActiveVipps] = useState(true);
   const [isActiveBetalingskort, setIsActiveBetalingskort] = useState(false);
   const [isActiveKlarna, setIsActiveKlarna] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
@@ -30,6 +34,7 @@ export default function Payment() {
 
   const toggleCheckbox = () => {
     setIsChecked(!isChecked);
+    onAcceptTerms();
   };
 
   return (
