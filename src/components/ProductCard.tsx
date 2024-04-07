@@ -90,7 +90,7 @@ const ProductCard: React.FC<propsType> = ({ item }) => {
     return (
       <div className="md:w-auto">
         <Link
-          href={`/products/${item.id}?title=${encodeURIComponent(item.title)}`}
+          href={`/products/${item.id}`}
         >
           <div>
             <Image
