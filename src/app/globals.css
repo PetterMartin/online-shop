@@ -4,7 +4,17 @@
 
 body {
   background-color: #eeeded;
+  font-family: 'Nunito', sans-serif;
 }
+
+::-webkit-scrollbar {
+  background-color: #eeeded; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0; 
+}
+
 
 @layer components {
   .navbar__link:hover {

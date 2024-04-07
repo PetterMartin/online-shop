@@ -8,7 +8,7 @@ const NewProducts = async () => {
 
   return (
     <div>
-      <div className="container flex flex-col gap-4 pt-16">
+      <div className="container flex flex-col gap-8 pt-16">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
             <div className="w-3 h-6 bg-rose-500 rounded"></div>
@@ -39,7 +39,7 @@ const NewProducts = async () => {
 
         <div className="relative">
           <div className="flex overflow-x-scroll gap-2 sm:justify-between">
-            {[products[0], products[1], products[2], products[3]].map(
+            {[products[16], products[18], products[13], products[9]].map(
               (item) => (
                 <div key={item.id}>
                   <ProductCard item={item} />
