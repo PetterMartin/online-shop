@@ -7,6 +7,18 @@ export async function getAllProducts() {
     return data;
   } catch (error) {
     console.error("Error fetching products:", error);
-    throw error; // Re-throw the error to handle it elsewhere if needed
+    throw error; 
+  }
+}
+
+
+export async function getProductById(productId: string) {
+  try {
+    const res = await fetch(`https://v2.api.noroff.dev/online-shop/${productId}`);
+    const data: ApiResponse = await res.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching product with ID ${productId}:`, error);
+    throw error;
   }
 }
