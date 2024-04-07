@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 const HeaderMain = () => {
   const router = useRouter();
-  const { quantity, setSearch } = useCartStore();
+  const { quantity, setSearch, toggleVisible } = useCartStore();
   const itemCount = quantity();
 
   const handleSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
@@ -58,7 +58,7 @@ const HeaderMain = () => {
               <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1"></div>
             </button>
 
-            <button>
+            <button onClick={toggleVisible}>
               <div className="relative cursor-pointer">
                 <HiOutlineShoppingBag size={27} />
                 <div className="bg-gradient-to-b from-rose-400 to-rose-500 rounded-full absolute top-0 right-0 w-[16px] h-[16px] text-[10px] text-white grid place-items-center translate-x-1 -translate-y-1">
