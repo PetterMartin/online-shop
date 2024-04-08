@@ -53,3 +53,8 @@ export interface ApiResponse {
   data: Product[];
   meta: Meta;
 }
+
+export interface SingleProductResponse {
+  data: Product;
+  meta: {};
+}
