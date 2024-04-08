@@ -88,7 +88,7 @@ const ProductCard: React.FC<propsType> = ({ item }) => {
 
   if (item)
     return (
-      <div className="md:w-auto">
+      <div className="md:w-auto md:p-4 p-1 rounded-md">
         <Link
           href={`/products/${item.id}`}
         >
