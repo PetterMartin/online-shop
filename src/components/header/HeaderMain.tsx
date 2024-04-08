@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const HeaderMain = () => {
   const router = useRouter();
-  const { quantity, setSearch, toggleVisible } = useCartStore();
+  const { quantity, setSearch, toggleVisible, setTag } = useCartStore();
   const itemCount = quantity();
 
   const handleSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,7 +28,14 @@ const HeaderMain = () => {
   return (
     <div className="pt-6 pb-3">
       <div className="container sm:flex justify-between items-center">
-        <Link href={"/"} passHref>
+        <Link
+          href={"/"}
+          passHref
+          onClick={() => {
+            setSearch("");
+            setTag("");
+          }}
+        >
           <Image
             src="/PriceClub.svg"
             alt="Storeshop Logo"
