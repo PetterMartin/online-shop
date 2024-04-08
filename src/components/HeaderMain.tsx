@@ -7,6 +7,7 @@ import { GrLocation } from "react-icons/gr";
 import { IoIosArrowDown } from "react-icons/io";
 import { useCartStore } from "@/store";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const HeaderMain = () => {
   const router = useRouter();
@@ -27,11 +28,8 @@ const HeaderMain = () => {
   return (
     <div className="pt-6 pb-3">
       <div className="container sm:flex justify-between items-center">
-        <Link
-          href={"/"}
-          className="font-bold text-4xl text-center pb-4 sm:pb-0 text-blackish"
-        >
-          STORESHOP
+      <Link href={"/"} passHref>
+            <Image src="/PriceClub.svg" alt="Storeshop Logo" width={200} height={50} />
         </Link>
 
         <form
