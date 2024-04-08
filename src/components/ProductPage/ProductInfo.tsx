@@ -122,8 +122,8 @@ const ProductInfo = () => {
     <div className="px-12 xl:px-36">
       <div className=" mt-6">
         <h1 className="text-4xl font-semibold">{item.title}</h1>
-        <div className="flex justify-between mt-3">
-          <div className="flex text-gray-500">
+        <div className="md:flex justify-between mt-3 flex-col">
+          <div className="flex text-gray-500 items-center">
             <p>
               <span className="font-semibold">Varenummer:</span>{" "}
               {slicedProductId}
@@ -131,12 +131,12 @@ const ProductInfo = () => {
             <div className="flex gap-2 font-semibold items-center ps-6 pe-2 ">
               {generateRating(item.rating)} {item.rating}
             </div>
-            <p> (2)</p>
-            <p className="ms-6 cursor-pointer hover:underline">
+            <p> ({item.reviews.length})</p>
+            <p className="ms-6 cursor-pointer hover:underline hidden md:block">
               Skriv en anmeldelse
             </p>
           </div>
-          <div className="flex gap-6 text-gray-500">
+          <div className="flex gap-6 mt-4 text-gray-500">
             <p className="flex items-center gap-2 cursor-pointer hover:underline">
               <HiMiniArrowsRightLeft size={25} /> Sammenlikn
             </p>
@@ -148,7 +148,7 @@ const ProductInfo = () => {
         <div className="border-b-2 border-gray-200 w-full mt-6"></div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between px-12 xl:px-32 my-9">
+      <div className="flex flex-col md:flex-row justify-between xl:px-32 my-9">
         <div className="md:pe-8 mb-6 md:mb-0">
           <Image
             className="rounded-md h-[160px] md:w-[500px] md:h-[500px] shadow-md"
@@ -198,7 +198,7 @@ const ProductInfo = () => {
           </div>
           <button
             onClick={() => add(item)}
-            className="flex w-64 justify-between text-xl font-semibold items-center bg-gradient-to-b from-rose-500 to-rose-600 text-white py-4 px-6 rounded-lg hover:opacity-85 transition duration-300 ease-in-out shadow-md"
+            className="flex gap-4 text-sm lg:text-xl font-semibold items-center bg-gradient-to-b from-rose-500 to-rose-600 text-white py-4 px-6 rounded-lg hover:opacity-85 transition duration-300 ease-in-out shadow-md"
           >
             <HiOutlineShoppingBag size={27} />
             Legg i handlekurv
@@ -206,29 +206,35 @@ const ProductInfo = () => {
         </div>
       </div>
 
-      <h1 className="text-3xl font-semibold mt-16">Anmeldelser (5)</h1>
-      <div className="border-b-2 border-gray-200 w-full my-6"></div>
-      
-      <div className="flex pb-2 border-b-2 mb-2">
-        <div className="flex w-10 h-10 items-center justify-center bg-gradient-to-b from-rose-500 to-rose-600 text-gray-100 rounded-full me-4">
-          H
-        </div>
-        <div className="flex flex-col w-full">
-          <div className="flex gap-2 items-center text-gray-500">
-            <p className="font-bold">Håkon</p>
-            <div className="text-xs">•</div>
-            <p className="text-sm">3 måneder siden</p>
+      <h1 className="text-3xl font-semibold mt-16">
+        Anmeldelser ({item.reviews.length})
+      </h1>
+      <div className="border-b-2 border-gray-200 w-full my-4"></div>
+
+      {item.reviews.map((review) => (
+        <div className="flex pb-2 border-b-2 mb-2 mt-4" key={review.id}>
+          <div className="flex w-10 h-10 items-center justify-center bg-gradient-to-b from-rose-500 to-rose-600 text-gray-100 rounded-full me-4">
+            {review.username[0]}{" "}
           </div>
-          <div>Stars</div>
-          <div className="flex justify-between items-center">
-            <div className="mt-2">Veldig Bra</div>
-            <div className="flex gap-6 text-gray-400">
-              <FaThumbsUp className="cursor-pointer hover:text-gray-500"/>
-              <FaThumbsDown className="cursor-pointer hover:text-gray-500"/>
+          <div className="flex flex-col w-full">
+            <div className="flex gap-2 items-center text-gray-500">
+              <p className="font-bold">{review.username}</p>
+              <div className="text-xs">•</div>
+              <p className="text-sm">3 måneder siden</p>{" "}
+            </div>
+            <div className="flex gap-2 font-semibold items-center pe-2 ">
+              {generateRating(review.rating)} {review.rating}
+            </div>
+            <div className="flex justify-between items-center mt-4">
+              <div className=" text-gray-800">{review.description}</div>
+              <div className="flex gap-6 text-gray-400">
+                <FaThumbsUp className="cursor-pointer hover:text-gray-500" />
+                <FaThumbsDown className="cursor-pointer hover:text-gray-500" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
