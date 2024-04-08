@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import Link from "next/link";
 
-import {  BsWatch } from "react-icons/bs";
+import { BsWatch } from "react-icons/bs";
+import { useCartStore } from "@/store";
 import { IoIosArrowDown } from "react-icons/io";
 import { LiaLaptopSolid } from "react-icons/lia";
 import { MdOutlineHeadset } from "react-icons/md";
@@ -11,11 +12,12 @@ import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const router = useRouter();
+  const { setTag } = useCartStore();
 
   const handleSubmitSearch = (tag: string) => {
     router.push(`/products?tag=${tag}`);
-};
-
+    setTag(tag);
+  };
 
   return (
     <div className="hidden lg:block border-2 border-gray-200">
@@ -33,36 +35,31 @@ const Navbar = () => {
           >
             <MdOutlineHeadset size={20} /> Hodetelefoner
           </button>
-          <Link
-
+          <button
+            onClick={() => handleSubmitSearch("electronics")}
             className="flex gap-2 items-center bg-gray-50 text-gray-700 py-2 px-3 text-sm border-2 border-gray-300 rounded-lg font-semibold cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out"
-
-            href="#"
           >
-            <LiaLaptopSolid size={20}/> Elektronikk
-          </Link>
-          <Link
-
+            <LiaLaptopSolid size={20} /> Elektronikk
+          </button>
+          <button
+            onClick={() => handleSubmitSearch("shoes")}
             className="flex gap-2 items-center bg-gray-50 text-gray-700 py-2 px-3 text-sm border-2 border-gray-300 rounded-lg font-semibold cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out"
-
-            href="#"
           >
-            <GiRunningShoe size={20}/>Løpesko
-          </Link>
-          <Link
-
+            <GiRunningShoe size={20} />
+            Løpesko
+          </button>
+          <button
+            onClick={() => handleSubmitSearch("fashion")}
             className="flex gap-2 items-center bg-gray-50 text-gray-700 py-2 px-3 text-sm border-2 border-gray-300 rounded-lg font-semibold cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out"
-
-            href="#"
           >
-            <BsWatch size={18}/> Tilbehør
-          </Link>
-          <Link
+            <BsWatch size={18} /> Tilbehør
+          </button>
+          <button
+            onClick={() => handleSubmitSearch("perfume")}
             className="flex gap-2 items-center bg-gray-50 text-gray-700 py-2 px-3 text-sm border-2 border-gray-300 rounded-lg font-semibold cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out"
-            href="#"
           >
-            <GiDelicatePerfume size={18}/> Parfyme
-          </Link>
+            <GiDelicatePerfume size={18} /> Parfyme
+          </button>
         </div>
       </div>
     </div>

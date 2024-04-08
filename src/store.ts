@@ -6,9 +6,12 @@ export const useCartStore = create<CartStore>((set, get) => ({
   visible: false,
   total: 0,
   search: "",
-
+  tag: "",
   setSearch: (query) => {
     set(() => ({ search: query }));
+  },
+  setTag: (query) => {
+    set(() => ({ tag: query }));
   },
   add: (product) => {
     set((state) => ({

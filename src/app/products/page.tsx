@@ -1,7 +1,9 @@
 import React from "react";
+import { Suspense } from "react";
 import { getAllProducts } from "@/lib/api";
 
 import ProductsList from "@/components/productsList";
+import Spinner from "@/components/Spinner";
 
 const NewProducts = async () => {
   const data = await getAllProducts();
@@ -10,9 +12,15 @@ const NewProducts = async () => {
   return (
     <div>
       <div className="container flex flex-col gap-4 pt-16">
-        <div className="grid grid-cols-2 place-items-center sm:place-items-start sm:grid-cols-3 lg:grid-col-3 xl:grid-cols-4 gap-x-4 gap-y-8 xl:gap-x-20 xl:gap-y-10">
+        <Suspense
+          fallback={
+            <div className="w-full flex justify-center h-[100px]">
+              <Spinner></Spinner>
+            </div>
+          }
+        >
           <ProductsList products={products} />
-        </div>
+        </Suspense>
       </div>
     </div>
   );
