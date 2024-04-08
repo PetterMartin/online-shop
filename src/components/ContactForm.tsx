@@ -115,7 +115,7 @@ export default function ContactForm() {
       <button
         disabled={isSubmitting}
         type="submit"
-        className="flex h-[48px] justify-center items-center md:max-w-[200px] bg-blackish text-white text-sm py-3 font-semibold rounded-lg mt-8 hover:opacity-85 transition duration-300 ease-in-out"
+        className="flex h-[48px] justify-center items-center md:max-w-[200px] bg-blackish text-gray-100 py-3 font-semibold rounded-lg mt-8 hover:opacity-85 transition duration-300 ease-in-out"
       >
         {isSubmitting ? <Spinner /> : "Send Melding"}
       </button>
