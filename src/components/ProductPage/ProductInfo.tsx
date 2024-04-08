@@ -14,6 +14,7 @@ import { HiMiniArrowsRightLeft } from "react-icons/hi2";
 import { TiStarFullOutline, TiStarOutline } from "react-icons/ti";
 import { RxCrossCircled } from "react-icons/rx";
 import Spinner from "../Spinner";
+import ProductInfoButton from "@/components/ProductInfoButton"
 
 const ProductInfo = () => {
   const { add } = useCartStore();
@@ -200,13 +201,7 @@ const ProductInfo = () => {
               <RxCrossCircled size={20} /> Ikke tilgjengelig i butikk
             </div>
           </div>
-          <button
-            onClick={() => add(item)}
-            className="flex gap-4 text-sm lg:text-xl font-semibold items-center bg-gradient-to-b from-rose-500 to-rose-600 text-white py-4 px-6 rounded-lg hover:opacity-85 transition duration-300 ease-in-out shadow-md"
-          >
-            <HiOutlineShoppingBag size={27} />
-            Legg i handlekurv
-          </button>
+          <ProductInfoButton item={item}/>
         </div>
       </div>
 

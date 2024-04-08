@@ -28,8 +28,13 @@ const HeaderMain = () => {
   return (
     <div className="pt-6 pb-3">
       <div className="container sm:flex justify-between items-center">
-      <Link href={"/"} passHref>
-            <Image src="/PriceClub.svg" alt="Storeshop Logo" width={200} height={50} />
+        <Link href={"/"} passHref>
+          <Image
+            src="/PriceClub.svg"
+            alt="Storeshop Logo"
+            width={200}
+            height={50}
+          />
         </Link>
 
         <form
