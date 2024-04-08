@@ -126,7 +126,7 @@ const ProductInfo = () => {
     <div className="px-12 xl:px-36">
       <div className=" mt-6">
         <h1 className="text-4xl font-semibold">{item.title}</h1>
-        <div className="md:flex justify-between mt-3 flex-col">
+        <div className="flex flex-col md:flex-row justify-between mt-3">
           <div className="flex text-gray-500 items-center">
             <p>
               <span className="font-semibold">Varenummer:</span>{" "}
@@ -167,9 +167,9 @@ const ProductInfo = () => {
         <div className="flex flex-col gap-10 border-2 p-8 rounded-lg">
           <div className="flex gap-2">
             <div className="flex">
-              <span className="text-xl md:text-4xl font-bold">{mainPrice}</span>
+              <span className="text-3xl md:text-4xl font-bold">{mainPrice}</span>
               {decimalPrice && (
-                <span className="text-xs md:text-lg font-bold ms-0.5">
+                <span className=" md:text-lg font-bold ms-0.5">
                   {decimalPrice}
                 </span>
               )}
@@ -227,7 +227,7 @@ const ProductInfo = () => {
               <p className="text-sm">3 måneder siden</p>{" "}
             </div>
             <div className="flex gap-2 font-semibold items-center pe-2 ">
-              {generateRating(review.rating)} {review.rating}
+              {generateRating(review.rating)}
             </div>
             <div className="flex justify-between items-center mt-4">
               <div className=" text-gray-800">{review.description}</div>

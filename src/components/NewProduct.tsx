@@ -16,7 +16,7 @@ const NewProducts = async () => {
 
           </div>
           <div className="me-4 mb-1 hover:underline cursor-pointer">
-            <Link href={`/products`}>See All</Link>
+            <Link href={`/products`}>Se alle her</Link>
           </div>
         </div>
 
