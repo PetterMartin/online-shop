@@ -27,13 +27,13 @@ export default function Cart() {
         onClick={toggleVisible}
       ></div>
       <div
-        className={`fixed top-0 z-50 flex flex-col right-0 h-[calc(100dvh-85px)] lg:h-[100dvh]  overflow-hidden justify-between w-[800px] max-w-[97vw] bg-white rounded-md px-2 py-6 md:p-8 transition-all duration-500 ${
+        className={`fixed top-0 z-50 flex flex-col right-0 h-[calc(100dvh-85px)] lg:h-[100dvh]  overflow-hidden justify-between w-[800px] max-w-[97vw] bg-gray-100 px-2 py-6 md:p-8 transition-all duration-500 ${
           visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
         }`}
       >
         <div className="flex justify-between">
-          <h2 className="text-2xl font-medium mb-2">My cart:</h2>
-          <button onClick={toggleVisible} className="text-3xl">
+          <h2 className="text-2xl font-medium mb-2">Handlekurv</h2>
+          <button onClick={toggleVisible} className="text-2xl">
             <IoClose />
           </button>
         </div>
@@ -59,7 +59,7 @@ export default function Cart() {
                     <h2 className="font-semibold">{item.title}</h2>
                     <div className="flex gap-4 items-center">
                       <button
-                        className="h-[48px] w-[48px] text-2xl border rounded-md"
+                        className="h-[48px] w-[48px] text-2xl border rounded-md hover:border-gray-500 transition duration-300 ease-in-out"
                         onClick={() => add(item)}
                       >
                         +
@@ -69,7 +69,7 @@ export default function Cart() {
                       </p>
                       <button
                         onClick={() => removeOne(item.id)}
-                        className="h-[48px] w-[48px] text-2xl border rounded-md"
+                        className="h-[48px] w-[48px] text-2xl border rounded-md hover:border-gray-500 transition duration-300 ease-in-out"
                       >
                         -
                       </button>
@@ -81,7 +81,7 @@ export default function Cart() {
                       </button>
                     </div>
                     <div className="font-semibold">
-                      kr {item.discountedPrice}
+                      {item.discountedPrice} kr
                     </div>
                   </div>
                 </div>
@@ -90,15 +90,15 @@ export default function Cart() {
           </ul>
         </div>
         {cart.length > 0 ? (
-          <div className="grid gap-4 pt-4  bg-white w-full">
+          <div className="grid gap-4 pt-4  w-full">
             <button
-              className="border bg-rose-50 p-2 flex justify-center items-center gap-2 h-[48px] transition duration-300 hover:border-red-600"
+              className="border bg-rose-100 p-2 rounded-md flex justify-center items-center gap-2 h-[48px] hover:border-red-600 transition duration-300 ease-in-out"
               onClick={removeAll}
             >
-              Clear cart <MdDelete />
+              Tøm handlekurv <MdDelete />
             </button>
             <p className="font-semibold text-xl">
-              Total: kr {total.toFixed(2)}
+              Å betale: {total.toFixed(2)} kr
             </p>
 
             <Link
@@ -106,22 +106,22 @@ export default function Cart() {
               className="h-[48px] group font-medium bg-green-200 rounded-md px-2 flex items-center gap-2 justify-center"
               href={"/checkout"}
             >
-              <div className="flex items-center group-hover:mx-4 transition-all duration-300 ease-in-out">
-                <p className="flex">To Checkout</p>
+              <div className="flex gap-2 items-center group-hover:mx-4 transition-all duration-300 ease-in-out">
+                <p className="flex">Gå til kassen</p>
                 <HiOutlineShoppingBag />{" "}
               </div>
-              <p className="">{">>"}</p>
+              <p className="ms-4">{">>"}</p>
             </Link>
           </div>
         ) : (
           <div className="grid gap-4">
-            <h2>No items in cart</h2>
+            <h2>Ingen varer i handlekurven</h2>
             <Link
               onClick={toggleVisible}
               className="h-[48px] font-medium border-b-2 w-fit  px-2 flex items-end transition duration-300 hover:border-black"
               href={"/products"}
             >
-              See products
+              Se produkter
             </Link>
           </div>
         )}

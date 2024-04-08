@@ -12,7 +12,7 @@ export default function AddButton({ item }: { item: Product }) {
 
   return (
     <button
-      className="px-2 bg-gradient-to-b transition-all duration-500 from-rose-500 to-rose-600 text-gray-100 text-sm py-1 max-w-[140px] rounded-lg text-center mt-2 hover:from-rose-400 hover:to-rose-500"
+      className="flex items-center gap-2 px-3 py-2 bg-gradient-to-b from-rose-500 to-rose-600 font-semibold shadow-md transition duration-300 text-sm ease-in-out text-gray-100 rounded-lg text-center mt-2 hover:opacity-85"
       onClick={() => {
         add(item);
         toast.custom(
@@ -33,9 +33,9 @@ export default function AddButton({ item }: { item: Product }) {
                 height="100"
                 className="h-20 w-1/3 rounded-sm object-cover"
               />
-              <div className="flex flex-col justify-between w-2/3">
-                <h2 className="font-semibold text-gray-600">
-                  {item.title} added
+              <div className="flex flex-col gap-2 justify-between w-2/3">
+                <h2 className="font-semibold text-gray-600 text-sm">
+                  <span className="text-gray-800 text-base font-bold">{item.title}</span> lagt til
                 </h2>
                 <button
                   className="h-[48px] rounded-md bg-gradient-to-b from-rose-500 to-rose-600 text-white hover:opacity-85 flex justify-center items-center gap-2 transition duration-300 ease-in-out"
@@ -44,7 +44,7 @@ export default function AddButton({ item }: { item: Product }) {
                     toast.dismiss(t);
                   }}
                 >
-                  See cart <HiOutlineShoppingBag />
+                  Se handlekurv <HiOutlineShoppingBag />
                 </button>
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function AddButton({ item }: { item: Product }) {
         );
       }}
     >
-      Add to Cart ✚
+      Legg i handlekurv <HiOutlineShoppingBag size={16}/>
     </button>
   );
 }

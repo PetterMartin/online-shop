@@ -12,7 +12,7 @@ const Footer = () => {
     <div className="px-6 md:px-36 bg-blackish text-gray-100">
       <div className="flex flex-col md:flex-row md:justify-between py-8">
         <div className="flex flex-col gap-4 md:w-1/4 items-center md:items-start">
-          <h1 className="font-bold text-2xl ">STORESHOP</h1>
+          <h1 className="font-bold text-2xl mb-2">STORESHOP</h1>
           <div className="flex gap-2 items-center text-sm">
             <LiaPhoneVolumeSolid size={20} />
             (+47)875-462-0127
@@ -27,38 +27,38 @@ const Footer = () => {
           </div>
         </div>
         <div className="hidden md:flex flex-col gap-3 md:w-1/4 items-center md:items-start">
-          <h2 className="font-semibold text-md">Information</h2>
+          <h2 className="font-semibold text-lg mb-2">Informasjon</h2>
           <div className="flex flex-col gap-2 text-gray-400 text-sm">
-            <p className="hover:underline cursor-pointer">My account</p>
-            <p className="hover:underline cursor-pointer">Login</p>
-            <p className="hover:underline cursor-pointer">My Cart</p>
-            <p className="hover:underline cursor-pointer">My Wishlist</p>
-            <p className="hover:underline cursor-pointer">Checkout</p>
+            <p className="hover:underline cursor-pointer">Om oss</p>
+            <p className="hover:underline cursor-pointer">Gavekort</p>
+            <p className="hover:underline cursor-pointer">Vår butikk i Storgata</p>
+            <p className="hover:underline cursor-pointer">Våre kategorier</p>
+            <p className="hover:underline cursor-pointer">Medvirkende</p>
           </div>
         </div>
         <div className="hidden md:flex flex-col gap-3 md:w-1/4 items-center md:items-start">
-          <h2 className="font-semibold text-md">Service</h2>
+          <h2 className="font-semibold text-lg mb-2">Hjelp & Info</h2>
           <div className="flex flex-col gap-2 text-gray-400 text-sm">
-            <p className="hover:underline cursor-pointer">About Us</p>
+            <p className="hover:underline cursor-pointer">Kundeservice</p>
             <Link href={`/contact`}>
-            <p className="hover:underline cursor-pointer">Contact Us</p>
+            <p className="hover:underline cursor-pointer">Kontakt oss</p>
             </Link>
             <p className="hover:underline cursor-pointer">
-              Delivery Information
+              Ofte stilte spørsmål
             </p>
-            <p className="hover:underline cursor-pointer">Privacy Policy</p>
-            <p className="hover:underline cursor-pointer">Terms & Conditions</p>
+            <p className="hover:underline cursor-pointer">Sikkerhet og personvern</p>
+            <p className="hover:underline cursor-pointer">Åpenhetsloven</p>
           </div>
         </div>
         <div className="flex flex-col gap-2 md:w-1/4 items-center md:items-start">
-          <h2 className="font-semibold text-md ">Subscribe</h2>
+          <h2 className="font-semibold text-lg mb-2">Meld deg på vårt nyhetsbrev her!</h2>
           <p className="max-w-[300px] text-sm ">
-            Enter your email below to the first to know about new collections.
+          Ved å registrere deg for vårt nyhetsbrev er du først ute med å få siste nytt, unike tilbud, info om konkurranser, og mye annen moro.
           </p>
           <div className="w-full flex justify-between items-center bg-neutral-700 mt-2 py-2 px-3 rounded-lg">
             <div className="flex gap-2 items-center">
               <HiOutlineMail size={20} />
-              Your Email
+              E-postaddresse
             </div>
             <FaArrowRight size={12} />
           </div>
@@ -73,7 +73,7 @@ const Footer = () => {
           <FaCcAmex size={27}/>
           <FaPaypal size={22}/>
         </div>
-        <div className="lg:me-20 text-gray-200 text-xs">© 2024 Petter&Hallvard All Rights are reserved</div>
+        <div className="lg:me-20 text-gray-200 text-xs">© 2024 Petter&Hallvard</div>
         <div className="flex gap-3 items-center justify-center md:justify-end">
           <FaFacebookF
             size={20}

@@ -38,7 +38,11 @@ const ProductInfo = () => {
   }, [pathname]);
 
   if (!item) {
-    return <Spinner />;
+    return (
+      <div className="flex justify-center">
+        <Spinner />
+      </div>
+    );
   }
 
   const generateRating = (rating: number) => {
