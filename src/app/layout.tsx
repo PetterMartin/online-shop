@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import HeaderTop from "@/components/HeaderTop";
-import HeaderMain from "@/components/HeaderMain";
-import Navbar from "@/components/Navbar";
+import HeaderTop from "@/components/header/HeaderTop";
+import HeaderMain from "@/components/header/HeaderMain";
+import Navbar from "@/components/header/Navbar";
 import { Toaster } from "sonner";
 
 import "slick-carousel/slick/slick.css";

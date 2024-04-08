@@ -2,7 +2,7 @@ import React from "react";
 import { Suspense } from "react";
 import { getAllProducts } from "@/lib/api";
 
-import ProductsList from "@/components/productsList";
+import ProductsList from "@/components/products/productsList";
 import Spinner from "@/components/Spinner";
 
 const NewProducts = async () => {

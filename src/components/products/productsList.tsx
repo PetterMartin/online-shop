@@ -1,6 +1,6 @@
 "use client";
 import { Product } from "@/types/global";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/products/ProductCard";
 import { useCartStore } from "@/store";
 type IProducts = Product[];
 

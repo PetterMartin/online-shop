@@ -9,12 +9,11 @@ import { useCartStore } from "@/store";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa6";
 import { FiHeart } from "react-icons/fi";
-import { HiOutlineShoppingBag } from "react-icons/hi";
 import { HiMiniArrowsRightLeft } from "react-icons/hi2";
 import { TiStarFullOutline, TiStarOutline } from "react-icons/ti";
 import { RxCrossCircled } from "react-icons/rx";
 import Spinner from "../Spinner";
-import ProductInfoButton from "@/components/ProductInfoButton"
+import ProductInfoButton from "@/components/buttons/ProductInfoButton"
 
 const ProductInfo = () => {
   const { add } = useCartStore();
