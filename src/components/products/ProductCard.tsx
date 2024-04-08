@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import { Product } from "@/types/global";
-
 import { TiStarFullOutline, TiStarOutline } from "react-icons/ti";
-import AddButton from "./AddButton";
+import AddButton from "../buttons/AddButton";
 import Link from "next/link";
+import TitleTruncator from "../TitleTruncator";
 
 interface propsType {
   item: Product;
@@ -82,11 +82,15 @@ const ProductCard: React.FC<propsType> = ({ item }) => {
     }
   };
 
+  const priceParts = item.discountedPrice.toString().split(".");
+  const mainPrice = priceParts[0];
+  const decimalPrice = priceParts.length > 1 ? priceParts[1] : "";
+
   if (item)
     return (
-      <div className="md:w-auto">
+      <div className="md:w-auto md:p-4 p-1 rounded-md">
         <Link
-          href={`/products/${item.id}?title=${encodeURIComponent(item.title)}`}
+          href={`/products/${item.id}`}
         >
           <div>
             <Image
@@ -101,10 +105,20 @@ const ProductCard: React.FC<propsType> = ({ item }) => {
           </div>
           <div className="flex flex-col gap-2 py-2">
             <div className="flex flex-col">
-              <h2 className="text-gray-600 font-semibold">{item.title}</h2>
-              <div className="font-bold flex gap-4">
-                ${item.discountedPrice}
+              <div className="font-extrabold flex text-sm md:text-md text-gray-800">
+                <span className="text-lg md:text-xl">{mainPrice}</span>
+                {decimalPrice && (
+                  <span className="text-xs ms-0.5 mt-0.5">
+                    {decimalPrice}
+                  </span>
+                )}
+                {item.discountedPrice !== item.price && (
+                  <span className="text-xs md:text-sm ms-2 mt-1 font-medium text-gray-500 line-through"> {item.price} </span>
+                )}
               </div>
+              <h2 className="text-gray-600 font-semibold text-xs md:text-base">
+                <TitleTruncator title={item.title} />
+              </h2>
             </div>
             <div className="flex gap-2 text-sm">
               {generateRating(item.rating)} {item.rating}

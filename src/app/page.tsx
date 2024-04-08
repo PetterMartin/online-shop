@@ -1,13 +1,13 @@
-import Hero from "@/components/Hero";
-import NewProducts from "@/components/NewProduct";
-import Testimonial from "@/components/Testimonial";
+import Hero from "@/components/slider/Hero";
+import NewProducts from "@/components/products/NewProduct";
+import Advertisement from "@/components/Advertisement";
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <NewProducts />
-      <Testimonial />
+      <Advertisement />
     </main>
   );
 }

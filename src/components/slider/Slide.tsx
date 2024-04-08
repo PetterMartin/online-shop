@@ -28,8 +28,8 @@ const Slide: React.FC<PropsType> = ({ img, buttonPosition = "center" }) => {
           buttonPosition !== "center" ? "" : ""
         }`}
       >
-        <button className="bg-gradient-to-b from-rose-500 to-rose-600 text-white text-[14px] md:text-[16px] p-2 px-4 rounded-lg inline-block cursor-pointer hover:opacity-85 transition duration-300 ease-in-out">
-          Shop Now
+        <button className="bg-gradient-to-b from-rose-500 to-rose-600 text-white font-semibold text-[14px] md:text-base p-2 px-4 rounded-lg inline-block cursor-pointer hover:opacity-85 transition duration-300 ease-in-out shadow-md">
+          Se utvalget
         </button>
       </div>
 

@@ -4,7 +4,17 @@
 
 body {
   background-color: #eeeded;
+  font-family: 'Nunito', sans-serif;
 }
+
+::-webkit-scrollbar {
+  background-color: #eeeded; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0; 
+}
+
 
 @layer components {
   .navbar__link:hover {
@@ -71,13 +81,13 @@ body {
     transition: 0.5s;
   }
   .navigation ul li.active .nav-link .icon {
-    background: #ff7c7f;
+    background: linear-gradient(to bottom, #fb7185, #f43f5e);
     color: white;
     transform: translateY(-27px);
   }
   .navigation ul li .nav-link .icon::before {
     content: "";
-    background: #ff7c7f;
+    background: linear-gradient(to bottom, #fb7185, #f43f5e);
     position: absolute;
     top: 10px;
     left: 0;

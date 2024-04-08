@@ -1,4 +1,37 @@
+![image](/public/PriceClub-Screenshot.png)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Report
+
+Next.js and TypeScript E-commerce Website
+
+- Introduction
+We developed an e-commerce website using Next.js and TypeScript. This project presented us with a opportunity to dive into these technologies, enhancing our skills and understanding of modern web development.
+
+- Project Overview
+Our primary objective was to create a user-friendly e-commerce platform with essential features such as product listing, individual product pages, cart management, and a streamlined checkout process. Using the Noroff API, we fetched product data to populate our website.
+
+- Learning Experience
+Server-Side Rendering: We delved into Next.js's server-side rendering capabilities, understanding how it improves performance and SEO.
+Type Safety: TypeScript proved invaluable in ensuring type safety throughout our codebase, reducing errors and improving code readability.
+
+- Design
+We took inspiration from electronic e-commerce sites like Elkjøp and Power in our design. The colors we used were red, black and gray/white. We wanted to create a professional, easy to understand and trustworthy website.
+
+- Conclusion
+Our journey in building an e-commerce website with Next.js and TypeScript was incredibly rewarding. Through collaborative effort and perseverance, we successfully created a functional and responsive application that showcases our newfound skills and understanding of modern web development practices. We look forward to applying these skills to future projects and further honing our craft in web development.
+
+# Stack
+NextJs
+Typescript
+Tailwind
+Zustand
+React-hook-form
+Zod
+Sønner Toast
+Slick Carousel
+Hosted with Vercel
 
 ## Getting Started
 

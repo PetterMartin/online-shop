@@ -1,6 +1,9 @@
 import React from "react";
-import ProductCard from "@/components/ProductCard";
+import { Suspense } from "react";
 import { getAllProducts } from "@/lib/api";
+
+import ProductsList from "@/components/products/productsList";
+import Spinner from "@/components/Spinner";
 
 const NewProducts = async () => {
   const data = await getAllProducts();
@@ -9,11 +12,15 @@ const NewProducts = async () => {
   return (
     <div>
       <div className="container flex flex-col gap-4 pt-16">
-        <div className="grid grid-cols-2 place-items-center sm:place-items-start sm:grid-cols-3 lg:grid-col-3 xl:grid-cols-4 gap-x-4 gap-y-8 xl:gap-x-20 xl:gap-y-10">
-          {products.map((item) => (
-            <ProductCard key={item.id} item={item} />
-          ))}
-        </div>
+        <Suspense
+          fallback={
+            <div className="w-full flex justify-center h-[100px]">
+              <Spinner></Spinner>
+            </div>
+          }
+        >
+          <ProductsList products={products} />
+        </Suspense>
       </div>
     </div>
   );

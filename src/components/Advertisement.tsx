@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Testimonial = () => {
+const Advertisement = () => {
   return (
     <div>
       <div className="container pt-16 pb-16 grid-cols-2">
@@ -23,7 +23,7 @@ const Testimonial = () => {
                 alt="Samsung Watch"
               />
               <button className="text-gray-900 bg-gray-100 py-2 px-4 font-bold rounded-3xl text-sm">
-                View More
+                Kjøp her
               </button>
             </div>
           </div>
@@ -35,4 +35,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default Advertisement;

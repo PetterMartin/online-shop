@@ -6,28 +6,60 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { GrLocation } from "react-icons/gr";
 import { IoIosArrowDown } from "react-icons/io";
 import { useCartStore } from "@/store";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const HeaderMain = () => {
-  const { toggleVisible, quantity } = useCartStore();
+  const router = useRouter();
+  const { quantity, setSearch, toggleVisible, setTag } = useCartStore();
   const itemCount = quantity();
+
+  const handleSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(e);
+    const searchValue = e.currentTarget.search.value;
+    router.push(`/products?search=${searchValue}`);
+  };
+
+  const handleSearchChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setSearch(e.currentTarget.value);
+  };
+
   return (
     <div className="pt-6 pb-3">
       <div className="container sm:flex justify-between items-center">
         <Link
           href={"/"}
-          className="font-bold text-4xl text-center pb-4 sm:pb-0 text-blackish"
+          passHref
+          onClick={() => {
+            setSearch("");
+            setTag("");
+          }}
         >
-          STORESHOP
+          <Image
+            src="/PriceClub.svg"
+            alt="Storeshop Logo"
+            width={200}
+            height={50}
+          />
         </Link>
 
-        <div className="w-full mx-4 sm:w-[300px] md:w-[70%] relative border-2 rounded-xl border-gray-300 flex items-center">
-          <BsSearch className="ml-4 mr-2 text-gray-500" size={16} />
+        <form
+          onSubmit={handleSubmitSearch}
+          className="w-full mx-4 sm:w-[300px] md:w-[70%] relative border-2 rounded-xl border-gray-300 flex items-center"
+        >
+          <button>
+            <BsSearch className="ml-4 mr-2 text-gray-500" size={16} />
+          </button>
           <input
+            onChange={handleSearchChange}
+            name="search"
+            required
             className="p-2 rounded-lg w-full bg-transparent"
             type="text"
             placeholder="Search for product"
           />
-        </div>
+        </form>
 
         <div className="hidden lg:flex items-center gap-6 text-gray-500">
           <div className="flex gap-4">
@@ -64,10 +96,10 @@ const HeaderMain = () => {
         <div className="flex gap-3">
           <div className="flex gap-1 text-gray-500 cursor-pointer">
             <GrLocation size={18} />
-            <p className="text-[13px]">Deliver to</p>
+            <p className="text-[13px]">Leveres til</p>
           </div>
           <div className="flex gap-1 text-gray-600 cursor-pointer">
-            <p>Home Hallvard</p>
+            <p>Hjem Tom</p>
             <IoIosArrowDown className="mt-0.5" />
           </div>
         </div>
