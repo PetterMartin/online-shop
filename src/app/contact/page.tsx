@@ -1,5 +1,5 @@
 import React from "react";
-
+import ContactForm from "@/components/ContactForm";
 import { HiOutlineMail } from "react-icons/hi";
 import { GrLocation } from "react-icons/gr";
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
@@ -34,68 +34,7 @@ export default function page() {
               </div>
             </div>
           </div>
-
-          <div className="flex flex-col w-full px-4 md:px-20 py-8">
-            <div className="flex flex-col md:flex-row gap-2 md:gap-20 text-sm text-gray-500 font-semibold">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="">
-                  Navn:
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="border-b-2 border-gray-300 rounded px-3 py-2 mb-4 bg-transparent"
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="">
-                  E-post:
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="border-b-2 border-gray-300 rounded px-3 py-2 mb-4 bg-transparent"
-                />
-              </div>
-            </div>
-
-            <label
-              htmlFor="subject"
-              className="mb-2 mt-2 md:mt-1 text-sm text-gray-500 font-semibold"
-            >
-              Tema:
-            </label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              className="border-b-2 border-gray-300 rounded px-3 py-2 mb-4 bg-transparent"
-            />
-
-            <label
-              htmlFor="message"
-              className="text-sm text-blackish font-semibold mt-4"
-            >
-              Melding:
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              className="border-b-2 border-blackish rounded px-3 py-2 mb-4 bg-transparent relative"
-              rows={4}
-              placeholder="Skriv meldingen her"
-            ></textarea>
-
-            <button
-              type="submit"
-              className="md:max-w-[200px] bg-blackish text-white text-sm py-3 font-semibold rounded-lg mt-8 hover:opacity-85 transition duration-300 ease-in-out"
-            >
-              Send Melding
-            </button>
-          </div>
+          <ContactForm />
         </div>
       </div>
     </>
