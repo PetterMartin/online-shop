@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import { Product } from "@/types/global";
 import { TiStarFullOutline, TiStarOutline } from "react-icons/ti";
-import AddButton from "./AddButton";
+import AddButton from "../buttons/AddButton";
 import Link from "next/link";
-import TitleTruncator from "./TitleTruncator";
+import TitleTruncator from "../TitleTruncator";
 
 interface propsType {
   item: Product;
