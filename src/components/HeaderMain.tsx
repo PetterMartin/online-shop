@@ -84,7 +84,7 @@ const HeaderMain = () => {
         <div className="flex gap-3">
           <div className="flex gap-1 text-gray-500 cursor-pointer">
             <GrLocation size={18} />
-            <p className="text-[13px]">Lever til</p>
+            <p className="text-[13px]">Leveres til</p>
           </div>
           <div className="flex gap-1 text-gray-600 cursor-pointer">
             <p>Hjem Tom</p>
