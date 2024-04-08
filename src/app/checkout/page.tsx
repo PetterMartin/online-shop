@@ -122,7 +122,7 @@ export default function Checkout() {
                     <div>
                       <h2 className="font-semibold">{item.title}</h2>
                       <p className="text-gray-500 font-light ">
-                        Quantity: {item.count}
+                        Kvantitet: {item.count}
                       </p>
                     </div>
                   </div>
