@@ -23,10 +23,11 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<FormFields>({ resolver: zodResolver(schema) });
-  const onSubmit: SubmitHandler<FormFields> = async () => {
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
     await new Promise<void>((resolve) =>
       setTimeout(() => {
         toast.success("Form successfully submitted");
+        console.log("data", data);
         resolve();
         reset();
       }, 1000)
